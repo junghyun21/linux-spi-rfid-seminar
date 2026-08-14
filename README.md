@@ -18,24 +18,24 @@ Raspberry Pi에서 Linux `spidev` 인터페이스를 통해 **MFRC522 기반 RFI
 
 ## 목차
 
-1. [사용 장치 및 환경](#1-사용-장치-및-환경)
-    1.1 [Hardware](#11-hardware)
-    1.2 [Build Environment](#12-build-environment)
-    1.3 [Runtime Environment](#13-runtime-environment)
-2. [프로젝트 파일 구성](#2-프로젝트-파일-구성)
-3. [빌드](#3-빌드)
-4. [프로그램 사용법](#4-프로그램-사용법)
-    4.1 [내장 명령어 요약](#41-내장-명령어-요약)
-    4.2 [UID 읽기](#42-uid-읽기)
-    4.3 [Block 읽기](#43-block-읽기)
-    4.4 [Sector 읽기](#44-sector-읽기)
-    4.5 [도움말](#45-도움말)
-    4.6 [종료](#46-종료)
-5. [MIFARE Classic 1K 메모리 구조](#5-mifare-classic-1k-메모리-구조)
-    5.1 [Sector Trailer 주의사항](#51-sector-trailer-주의사항)
-    5.2 [5.2 기본 인증 Key (Key A)](#52-기본-인증-key-key-a)
-6. [RFID 처리 흐름](#6-rfid-처리-흐름)
-7. [빠른 시작](#7-빠른-시작)
+1. [사용 장치 및 환경](#1-사용-장치-및-환경)  
+    1.1 [Hardware](#11-hardware)  
+    1.2 [Build Environment](#12-build-environment)  
+    1.3 [Runtime Environment](#13-runtime-environment)  
+2. [프로젝트 파일 구성](#2-프로젝트-파일-구성)  
+3. [빌드](#3-빌드)  
+4. [프로그램 사용법](#4-프로그램-사용법)  
+    4.1 [내장 명령어 요약](#41-내장-명령어-요약)  
+    4.2 [UID 읽기](#42-uid-읽기)  
+    4.3 [Block 읽기](#43-block-읽기)  
+    4.4 [Sector 읽기](#44-sector-읽기)  
+    4.5 [도움말](#45-도움말)  
+    4.6 [종료](#46-종료)  
+5. [MIFARE Classic 1K 메모리 구조](#5-mifare-classic-1k-메모리-구조)  
+    5.1 [Sector Trailer 주의사항](#51-sector-trailer-주의사항)  
+    5.2 [5.2 기본 인증 Key (Key A)](#52-기본-인증-key-key-a)  
+6. [RFID 처리 흐름](#6-rfid-처리-흐름)  
+7. [빠른 시작](#7-빠른-시작)  
 
 <br>
 
@@ -63,7 +63,7 @@ Compiler   : aarch64-linux-gnu-gcc
 Target     : AArch64 Linux
 ```
 
-빌드 흐름:
+흐름:
 
 ```text
 WSL Ubuntu
