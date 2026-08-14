@@ -1,0 +1,4 @@
+rfidctl
+bin/readUID
+bin/readBlock
+bin/readSector
