@@ -57,6 +57,19 @@ Target      : AArch64 Linux
   - NXP MIFARE Classic EV1:
     https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf
 
+> **핀 연결표**
+
+| Pin | 범용 SPI Device Driver (`spidev`) | MFRC522 전용 Device Driver (`mfrc522_driver`) |
+|-------------|------------------------------------|-----------------------------------------------|
+| 3.3V        | Pin 1, 3.3V                        | Pin 1, 3.3V                                   |
+| GND         | Pin 6, GND                         | Pin 6, GND                                    |
+| SCK         | Pin 23, GPIO11 / SPI0 SCLK         | Pin 23, GPIO11 / SPI0 SCLK                    |
+| MOSI        | Pin 19, GPIO10 / SPI0 MOSI         | Pin 19, GPIO10 / SPI0 MOSI                    |
+| MISO        | Pin 21, GPIO9 / SPI0 MISO          | Pin 21, GPIO9 / SPI0 MISO                     |
+| SDA / SS    | **Pin 24, GPIO8 / SPI0 CE0**       | **Pin 26, GPIO7 / SPI0 CE1**                  |
+| RST         | Pin 22, GPIO25                     | Pin 22, GPIO25                                |
+| IRQ         | 미사용                              | 미사용                                         |
+
 ### 1.2 Build Environment
 
 현재 프로젝트는 **Windows 11의 WSL Ubuntu 환경에서 Raspberry Pi용 실행파일을 Cross Compile**하는 구성을 기준으로 합니다.
