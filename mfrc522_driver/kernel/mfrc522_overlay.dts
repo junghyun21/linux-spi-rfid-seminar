@@ -1,0 +1,33 @@
+/dts-v1/;           // Device Tree Source 문법을 사용하는 DTS 파일이라는 선언
+/plugin/;           // 완전한 Device Tree가 아니라 기존 Device Tree 위에 적용할 Overlay라는 뜻
+
+/ {
+    compatible = "brcm,bcm2711";        // 이 오버레이가 BCM2711 계열을 대상으로 한다는 의미 (드라이버 매칭용 compatible x)
+
+    // 기존 SPI0 CE1의 spidev 장치를 비활성화
+    // Overlay는 기존 Device Tree의 어디를 어떻게 수정할지를 fragment 단위로 정의
+    fragment@0 {
+        target = <&spidev1>;        // 기존 Device Tree의 spidev1 label이 붙은 노드를 찾아가라
+
+        __overlay__ {               // target으로 지정한 노드에 이 내용을 덮어써라
+            status = "disabled";
+        };
+    };
+
+    // 같은 SPI0 CE1에 MFRC522 장치를 새로 등록
+    fragment@1 {
+        target = <&spi0>;
+
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <0>;
+
+            mfrc522@1 {
+                compatible = "seminar,mfrc522";
+                reg = <1>;                              // Chip Select = 1
+                spi-max-frequency = <10000000>;         // 10 MHz
+                status = "okay";
+            };
+        };
+    };
+};
